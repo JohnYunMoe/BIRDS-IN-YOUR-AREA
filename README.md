@@ -1,25 +1,36 @@
 # BIRDS-IN-YOUR-AREA
 Short project made for the first assignment of NYU STERN class TECH-UB 24(PROJECTS IN PROGRAMMING)
-## Overview
+# Geolocation and eBird API Integration
 
-This project integrates geolocation services and the eBird API to retrieve the user's location based on their IP address and display recent bird sightings in that location. It utilizes the Abstract API for geolocation and the eBird API for bird observation data.
+## Project Overview
 
-## Features
+This project retrieves the user's geographical location based on their IP address and fetches recent bird sightings in that area using the eBird API. 
 
-- Retrieves the user's geographical location using their IP address.
-- Validates API keys for Abstract and eBird APIs.
-- Fetches recent bird sightings based on the user's location.
-- Displays bird sightings in a user-friendly format.
+## Technologies Used
 
-## Prerequisites
+- **Python 3.x**: The primary programming language used for this project.
+- **Requests Library**: Used for making HTTP requests to external APIs.
+- **Abstract API**: For geolocation services based on IP address.
+- **eBird API**: To fetch recent bird observation data.
 
-- Python 3.x
-- Libraries: `requests`, `ast`, `google.colab`
+## How It Works
 
-## Setup
+1. **API Keys**:
+   - The project retrieves API keys for both the Abstract API and the eBird API using Google Colab's `userdata` feature.
 
-1. **Clone the Repository**
+2. **Get User Location**:
+   - The `get_location()` function calls the Abstract API to get the user's city, region, and country code based on their IP address.
 
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+3. **Fetch Bird Sightings**:
+   - The `birds_in_location(country_code)` function constructs a request to the eBird API using the retrieved country code.
+   - It processes the response and returns a dictionary containing bird names, their observation locations, and observation dates.
+
+4. **Display Results**:
+   - The `main()` function orchestrates the flow by calling the location and bird sighting functions, then displays the results in a user-friendly format.
+
+## Example Output
+
+Upon execution, the program outputs:
+- The city, region, and country code.
+- A list of recent bird sightings in the format: 
+
