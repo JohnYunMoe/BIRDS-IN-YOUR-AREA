@@ -32,5 +32,11 @@ This project retrieves the user's geographical location based on their IP addres
 
 Upon execution, the program outputs:
 - The city, region, and country code.
-- A list of recent bird sightings in the format: 
+- A list of recent bird sightings in the format:
+
+
+## Conclusion
+
+This project demonstrates how to integrate geolocation and wildlife observation APIs to provide users with real-time data about bird sightings based on their location.
+
 
